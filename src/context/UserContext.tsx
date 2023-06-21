@@ -1,9 +1,16 @@
-import { createContext, useState } from 'react';
+import React, { createContext, useState } from 'react';
 import { IUserDto } from '../models/IUser';
+
+
+type UseContextProvider={
+    children:React.ReactNode
+}
 
 export const UseContext = createContext();
 
-export const UserProvider = ({children})=>{
+
+
+export const UserProvider = ({children}:UseContextProvider)=>{
     const [userCtx, setUserCtx] = useState({
         username:"",
         password:""
